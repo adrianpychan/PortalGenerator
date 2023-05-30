@@ -41,7 +41,6 @@ def portal(sheet_url, sheet_name):
         ).T.reset_index(drop = True)
     
     # Creating the Column Names based upon the number of Classes (e.g. if 12, then lesson1_date - lesson12_date)
-    # display = ["display" for i in range(len(lesson_time)+1) if i == 0]
     original = ['course_title' if i == 0 else f'lesson{i}_date' for i in range(len(lesson_time)+1)]
     time_lesson = [f'lesson{i}_time' for i in range(1, len(lesson_time) + 1)]
     venue = [f'lesson{i}_location' for i in range(1, len(lesson_time) + 1)]
