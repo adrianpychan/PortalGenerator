@@ -10,8 +10,8 @@ from time import sleep
 import pandas as pd
 
 #Set Course Name here and Length of Courses here:
-df = pd.read_csv("[B2B] Executive Masterclass in Full Stack Development for Business.csv")
-course_name = "[B2B] Executive Masterclass in Full Stack Development for Business"
+df = pd.read_csv("bootcamp.csv")
+course_name = df["course_title"].unique()[0]
 course_length = df.columns[-1].split("_")[0].split("lesson")[-1]
 
 #Setup
