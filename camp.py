@@ -59,5 +59,5 @@ def portal(sheet_url, sheet_name):
 portal("https://docs.google.com/spreadsheets/d/16Jx56t_n1eVLxFa6HlifJlY9IUvQlmrrAFBX0cVEyAU/edit#gid=1828694328",
        "Class Schedule & Attendance")
 
-#Hello i am adrian
+#Hello i am adrian chan
 
