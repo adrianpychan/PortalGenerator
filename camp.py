@@ -6,7 +6,7 @@ from datetime import datetime
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(".env") #Change this to your .env file pathway
 
 def portal(sheet_url, sheet_name):
 

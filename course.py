@@ -12,7 +12,7 @@ import os
 from dotenv import load_dotenv
 
 #Load .env file
-load_dotenv()
+load_dotenv(".env")
 
 #Set Course Name here and Length of Courses here:
 df = pd.read_csv("bootcamp.csv")
