@@ -66,6 +66,16 @@ def creation(course_name, course_length):
     WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//*[@id="new_course"]/div[2]/input'))).submit()
 
     print("Course created on Portal!")
+    sleep(3)
+
+    #Import Business to business camp
+    driver.get("https://portal.preface.ai/admin_dashboards/happenings/business_to_business/bulk_new")
+
+    #Uploading bootcamp.csv using file path
+    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH,  '//*[@id="happening_file"]'))).send_keys(file_path)
+
+    #Clicking upload
+    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//*[@id="new_happening"]/input[3]'))).submit()
 
 creation(course_name = course_name, course_length = course_length)
 
