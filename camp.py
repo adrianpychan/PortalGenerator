@@ -3,13 +3,17 @@ import gspread
 import pandas as pd
 from dateutil.parser import parse as dt
 from datetime import datetime
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def portal(sheet_url, sheet_name):
 
     scopes = ["https://www.googleapis.com/auth/spreadsheets",
             "https://www.googleapis.com/auth/drive"]
 
-    creds = Credentials.from_authorized_user_file('token.json', scopes)
+    creds = Credentials.from_authorized_user_file(os.getenv('GCP_TOKEN'), scopes)
     client = gspread.authorize(creds)
     ws = client.open_by_url(sheet_url).worksheet(sheet_name)
     
