@@ -8,6 +8,11 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 import pandas as pd
+import os
+from dotenv import load_dotenv
+
+#Load .env file
+load_dotenv()
 
 #Set Course Name here and Length of Courses here:
 df = pd.read_csv("bootcamp.csv")
@@ -24,8 +29,8 @@ def creation(course_name, course_length):
     driver.get("https://portal.preface.ai/users/sign_in")
     
     #Logging In
-    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//*[@id="user_login"]'))).send_keys("adrianpychan@hotmail.com")
-    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//*[@id="user_password"]'))).send_keys("Bb993a68!")
+    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//*[@id="user_login"]'))).send_keys(os.getenv('PORTAL_USERNAME'))
+    WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//*[@id="user_password"]'))).send_keys(os.getenv('PORTAL_PASSWORD'))
     WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//*[@id="new_user"]/input[3]'))).submit()
 
     #Create New Course
