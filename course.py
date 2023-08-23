@@ -19,6 +19,12 @@ df = pd.read_csv("bootcamp.csv")
 course_name = df["course_title"].unique()[0]
 course_length = df.columns[-1].split("_")[0].split("lesson")[-1]
 
+#File path of bootcamp.csv
+
+filename = "bootcamp.csv"
+current_folder = os.getcwd()
+file_path = os.path.join(current_folder, filename)
+
 #Setup
 chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
