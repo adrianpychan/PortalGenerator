@@ -1,4 +1,4 @@
 venv/
 bootcamp.csv
-DS_Store
+.DS_Store
 .env
